@@ -7,7 +7,19 @@ This project builds a neural language model from scratch for next-character pred
 * Evaluate all setups with loss and character-level perplexity.
 * Show clear, well-justified results with code and explanation.
 
-# 1.Data and Tokenization [For more details about data refer "Pride_and_Prejudice-Jane_Austen.txt" file in the repository]
+# 1.Data and Tokenization 
+## Dataset
+
+The dataset used for these experiments is publicly available on Google Drive:
+
+[Pride_and_Prejudice-Jane_Austen.txt](https://drive.google.com/file/d/1FNuJSYRdN2BomupmNkkKROBSkQzSPS9N/view?usp=sharing)
+
+Download automatically in Colab with:
+```
+!pip install -q gdown
+!gdown --id 1FNuJSYRdN2BomupmNkkKROBSkQzSPS9N -O Pride_and_Prejudice-Jane_Austen.txt
+```
+
 * Dataset: "Pride_and_Prejudice-Jane_Austen.txt" (public domain).
 * Preprocessing: Lowercased, punctuation retained, no stopword removal.
 * Tokenization: Character-level (every unique letter, digit, space, symbol is a token).
@@ -74,3 +86,35 @@ Assignment will also be available in a folder on repository
 
 # 10. Conclusion
 This project shows exactly how neural sequence modeling works, and how key decisions—model size, regularization, and training duration—directly lead to underfitting, best-fit, or overfitting. All code is from scratch and fully explained.
+
+# Reproducibility
+This codebase is designed to ensure full reproducibility of results for all language model experiments. The following best practices have been implemented:
+
+Random seeds are set for PyTorch, NumPy, and Python’s random module to make results consistent:
+
+python
+```import random, numpy as np, torch
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+torch.cuda.manual_seed_all(SEED)
+ ```
+
+Data download is automated: The dataset is fetched via public Google Drive link if not present locally, so no manual data upload is needed.
+
+Environment requirements are listed, including Python and major library versions, to avoid setup discrepancies.
+
+Model weights saving/loading: Best models are saved during training 
+```
+(torch.save(model.state_dict(), ...))
+```
+, and can be reloaded for evaluation or text generation using 
+```
+model.load_state_dict(torch.load('best_gru_model.pt')).
+```
+Hyperparameters are fixed in each config and reported in the README and notebook, allowing exact re-execution of each experiment.
+
+Training/test splits are deterministic due to fixed random seed and split order.
+
+Anyone with access to the code and public data link can exactly reproduce the reported results and plots by running the notebook or script in a standard Colab or local environment.
