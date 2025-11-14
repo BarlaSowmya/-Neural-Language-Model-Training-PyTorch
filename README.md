@@ -41,7 +41,9 @@ Three types of model training runs were performed:
 * Best-Fit: Balanced model size, epochs, and regularization to achieve low and similar loss/perplexity on both train and validation splits.
 * Overfit: Used maximum model capacity, no regularization, and many epochs, causing the training loss to drop very low while validation loss stagnates or rises (large gap).
 Plots and results for all three regimes are provided in the repository.
+
 # 5.Results Table
+You can extract my "Assignment2.zip" file to access and evaluate my codes.
 | Scenario | Train Pplx | Val Pplx |
 | -------- | ---------- | -------- |
 | Underfit | 8.9250     | 8.9431   |
