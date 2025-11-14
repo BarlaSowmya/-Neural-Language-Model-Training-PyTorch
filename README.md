@@ -7,7 +7,7 @@ This project builds a neural language model from scratch for next-character pred
 * Evaluate all setups with loss and character-level perplexity.
 * Show clear, well-justified results with code and explanation.
 
-# 1.Data and Tokenization [For more details about data refer "Dataset" folder in the repository]
+# 1.Data and Tokenization [For more details about data refer "Pride_and_Prejudice-Jane_Austen.txt" file in the repository]
 * Dataset: "Pride_and_Prejudice-Jane_Austen.txt" (public domain).
 * Preprocessing: Lowercased, punctuation retained, no stopword removal.
 * Tokenization: Character-level (every unique letter, digit, space, symbol is a token).
