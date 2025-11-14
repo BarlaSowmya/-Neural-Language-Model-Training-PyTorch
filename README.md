@@ -44,9 +44,9 @@ Plots and results for all three regimes are provided in the repository.
 # 5.Results Table
 | Scenario | Train Pplx | Val Pplx |
 | -------- | ---------- | -------- |
-| Underfit | (high)     | (high)   |
-| Best-Fit | ~2.5       | ~2.5     |
-| Overfit  | (low)      | (high)   |
+| Underfit | 8.9250     | 8.9431   |
+| Best-Fit | 2.5493     | 2.5680   |
+| Overfit  | 1.33       | 1.36     |
 
 Exact values are provided in the individual notebook outputs.
 
